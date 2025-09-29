@@ -1,23 +1,28 @@
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules"; // ✅ to‘g‘ri
+import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import Image from "next/image";
 import { HiOutlineLocationMarker } from "react-icons/hi";
-import { FcLike } from "react-icons/fc";
-import { cards } from "@/db/db";
 import Link from "next/link";
+import { useRef } from "react";
+import { FaRegHeart } from "react-icons/fa";
 
-const SwiperCarousel = () => {
+const SwiperCarousel = ({ cards }) => {
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
   return (
     <div className="w-full mx-auto">
       <Swiper
         modules={[Navigation]}
         spaceBetween={20}
         slidesPerView={4}
-        navigation
+        onBeforeInit={(swiper) => {
+          swiper.params.navigation.prevEl = prevRef.current;
+          swiper.params.navigation.nextEl = nextRef.current;
+        }}
       >
         {cards.map((card) => (
           <SwiperSlide key={card.id}>
@@ -27,33 +32,49 @@ const SwiperCarousel = () => {
                   src={card.image}
                   alt={card.title}
                   width={400}
-                  height={300}
-                  className="w-full h-[200px] object-cover "
+                  height={500}
+                  className="w-full h-[300px] object-cover "
                 />
               </div>
               <div className="flexs p-1 justify-between flex-col">
-                <div className="">
+                <div className="flex flex-col mb-2">
                   <h2 className="text-lg font-semibold text-gray-800">
                     {card.title}{" "}
                   </h2>
-                  <span>{card.year}</span>
+                  <span className="text-[16px] text-[#6d6d6d]">
+                    {card.year} year
+                  </span>
                 </div>
-                <div className="flex text-black">
+                <div className="flex items-center gap-2 text-black">
                   <HiOutlineLocationMarker color="000" size={28} />
-                  <span>{card.location}</span>
+                  <span className="text-[17px] text-gray-800">
+                    {card.location}
+                  </span>
                 </div>
-                <div className="flex items-center mt-4 justify-between">
-                  <Link href={`/${card.id}`}>
-                    <button className=" px-1 py-2 border hover:underline  text-[#000]  text-[16px]">
+                <div className="flex items-center pr-1 mt-4 justify-between">
+                  <Link href={`/catalog/${card.id}`}>
+                    <button className=" px-1 cursor-pointer py-2 border hover:underline  text-[#000]  text-[16px]">
                       Read more
                     </button>
                   </Link>
-                  <FcLike className="text-white" size={30} />
+                  <FaRegHeart className="text-blue-900" size={30} />
                 </div>
               </div>
             </div>
           </SwiperSlide>
         ))}
+        <div
+          ref={prevRef}
+          className="bg-white text-[#6d6d6d] p-2 px-4 rounded-[50%] absolute -left-3 top-1/2 -translate-y-1/2 cursor-pointer flex items-center justify-center z-10"
+        >
+          &#10094;
+        </div>
+        <div
+          ref={nextRef}
+          className="bg-white text-[#6d6d6d] p-2 px-4 rounded-[50%] absolute -right-3 top-1/2 -translate-y-1/2 cursor-pointer flex items-center justify-center z-10"
+        >
+          &#10095;
+        </div>
       </Swiper>
     </div>
   );
