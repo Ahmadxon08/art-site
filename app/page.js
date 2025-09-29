@@ -1,6 +1,9 @@
 "use client";
 import AppliedArt from "@/components/home/AppliedArt";
 import ArtFine from "@/components/home/ArtFine";
+import ArtGallery from "@/components/home/ArtGallery";
+import HomeMenuItems from "@/components/home/HomeMenu";
+import MostActive from "@/components/home/MostActive";
 import Image from "next/image";
 import React from "react";
 import { TfiStatsDown } from "react-icons/tfi";
@@ -61,12 +64,16 @@ const HomePage = () => {
           </div>
         </div>
       </div>
+      <ArtGallery />
+      <HomeMenuItems />
       <hr />
       <ArtFine />
 
       <hr />
 
       <AppliedArt />
+      <hr />
+      <MostActive />
     </>
   );
 };
