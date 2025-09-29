@@ -1,13 +1,86 @@
 export const menuData = [
-  { id: 1, label: "Gallery" },
-  { id: 2, label: "Authors" },
-  { id: 3, label: "Auctions" },
-  { id: 4, label: "Appraisal" },
-  { id: 5, label: "Laboratory" },
-  { id: 6, label: "Sell" },
-  { id: 7, label: "About us" },
-  { id: 8, label: "Publishing house" },
-  { id: 9, label: "Services" },
+  {
+    id: 1,
+    label: "Gallery",
+    children: [
+      { id: 101, label: "Paintings" },
+      { id: 102, label: "Sculptures" },
+      { id: 103, label: "Photography" },
+    ],
+  },
+  {
+    id: 2,
+    label: "Authors",
+    children: [
+      { id: 201, label: "Contemporary" },
+      { id: 202, label: "Classic" },
+      { id: 203, label: "Emerging" },
+      { id: 204, label: "International" },
+    ],
+  },
+  {
+    id: 3,
+    label: "Auctions",
+    children: [
+      { id: 301, label: "Upcoming" },
+      { id: 302, label: "Past" },
+    ],
+  },
+  {
+    id: 4,
+    label: "Appraisal",
+    children: [
+      { id: 401, label: "Online" },
+      { id: 402, label: "In-person" },
+      { id: 403, label: "Estimation" },
+    ],
+  },
+  {
+    id: 5,
+    label: "Laboratory",
+    children: [
+      { id: 501, label: "Restoration" },
+      { id: 502, label: "Authentication" },
+      { id: 503, label: "Research" },
+      { id: 504, label: "Analysis" },
+      { id: 505, label: "Documentation" },
+    ],
+  },
+  {
+    id: 6,
+    label: "Sell",
+    children: [
+      { id: 601, label: "Submit Work" },
+      { id: 602, label: "Guidelines" },
+    ],
+  },
+  {
+    id: 7,
+    label: "About us",
+    children: [
+      { id: 701, label: "Our Team" },
+      { id: 702, label: "Mission" },
+      { id: 703, label: "History" },
+    ],
+  },
+  {
+    id: 8,
+    label: "Publishing house",
+    children: [
+      { id: 801, label: "Books" },
+      { id: 802, label: "Catalogues" },
+      { id: 803, label: "Magazines" },
+    ],
+  },
+  {
+    id: 9,
+    label: "Services",
+    children: [
+      { id: 901, label: "Consulting" },
+      { id: 902, label: "Workshops" },
+      { id: 903, label: "Events" },
+    ],
+  },
 ];
 
 export const languages = [
@@ -34,6 +107,7 @@ export const cards = [
     author: "Rashid Timurov",
     description: "By the reservoir",
     price: "36,416,010.00 UZS",
+    lot: "Lot Number 54/69/741",
     details: {
       size: "73x57 cm",
       sign: "Lower right corner",
@@ -53,6 +127,7 @@ export const cards = [
     author: "Bahodir Jalilov",
     description: "Traditional view of Uzbekistan mountains",
     price: "12,000,000.00 UZS",
+    lot: "Lot Number 12/34/567",
     details: {
       size: "60x50 cm",
       sign: "No signature",
@@ -72,6 +147,7 @@ export const cards = [
     author: "Dilshod Karimov",
     description: "Evening lights in Samarkand city",
     price: "20,500,000.00 UZS",
+    lot: "Lot Number 23/45/678",
     details: {
       size: "80x65 cm",
       sign: "Lower left",
@@ -91,6 +167,7 @@ export const cards = [
     author: "Nodira Tursunova",
     description: "The majestic Registan in bright colors",
     price: "45,000,000.00 UZS",
+    lot: "Lot Number 34/56/789",
     details: {
       size: "100x80 cm",
       sign: "Signed bottom right",
@@ -110,6 +187,7 @@ export const cards = [
     author: "Akmal Saidov",
     description: "The beauty of Bukhara in the morning light",
     price: "25,300,000.00 UZS",
+    lot: "Lot Number 45/67/890",
     details: {
       size: "70x55 cm",
       sign: "Lower right",
@@ -129,6 +207,7 @@ export const cards = [
     author: "Sirojiddin Mahmudov",
     description: "Depiction of cotton harvest in Uzbekistan",
     price: "18,700,000.00 UZS",
+    lot: "Lot Number 56/78/901",
     details: {
       size: "75x60 cm",
       sign: "No signature",
@@ -148,6 +227,7 @@ export const cards = [
     author: "Umid Abdullayev",
     description: "Caravan on the ancient Silk Road",
     price: "39,900,000.00 UZS",
+    lot: "Lot Number 67/89/012",
     details: {
       size: "90x70 cm",
       sign: "Bottom left",
@@ -167,6 +247,7 @@ export const cards = [
     author: "Malika Usmonova",
     description: "Ancient Khiva fortress walls",
     price: "28,000,000.00 UZS",
+    lot: "Lot Number 78/90/123",
     details: {
       size: "85x65 cm",
       sign: "Lower right",
@@ -186,6 +267,7 @@ export const cards = [
     author: "Shavkat Ergashev",
     description: "Symbolic painting about the drying Aral Sea",
     price: "50,000,000.00 UZS",
+    lot: "Lot Number 89/01/234",
     details: {
       size: "110x90 cm",
       sign: "Lower right corner",
@@ -197,6 +279,17 @@ export const cards = [
     },
   },
 ];
+export const genresData = [
+  { id: 1, label: "Landscape" },
+  { id: 2, label: "Portrait" },
+  { id: 3, label: "Animalistic" },
+  { id: 4, label: "Historical" },
+  { id: 5, label: "Still life" },
+  { id: 6, label: "Military" },
+  { id: 7, label: "Genre Art" },
+  { id: 8, label: "Graphics" },
+];
+
 export const cardDatas = [
   // {
   //   id: 1,

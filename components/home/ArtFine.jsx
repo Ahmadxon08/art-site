@@ -1,6 +1,8 @@
+"use client";
 import React from "react";
 import SwiperCarousel from "../swiper/SwiperCarousel";
 import { cards } from "@/db/db";
+import Link from "next/link";
 
 const ArtFine = () => {
   return (
@@ -11,9 +13,12 @@ const ArtFine = () => {
           "
         >
           <h2 className="text-3xl font-bold text-[#000]">Fine art</h2>
-          <a href="#" className="text-[#6d6d6d] text-sm hover:underline">
+          <Link
+            href="/gallery"
+            className="text-[#6d6d6d] text-sm hover:underline"
+          >
             View all arts
-          </a>
+          </Link>
         </div>
         <SwiperCarousel cards={cards} />
       </div>

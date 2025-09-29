@@ -1,3 +1,4 @@
+"use client";
 import { categories, genres } from "@/db/db";
 import React from "react";
 import { GiPorcelainVase } from "react-icons/gi";

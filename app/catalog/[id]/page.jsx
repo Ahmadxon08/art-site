@@ -15,7 +15,7 @@ const CardDeteilPage = async ({ params }) => {
     return <div className="text-center mt-10">Card not found</div>;
   }
   return (
-    <div className="container mx-auto bg-white  mt-6">
+    <div className="container mx-auto bg-white  mt-9">
       <div className="flex items-center  gap-6 justify-start my-9 w-full">
         <Link
           href="/"

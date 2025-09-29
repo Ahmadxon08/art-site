@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const ArtGallery = () => {
   return (
-    <div className="grid grid-cols-1 container mx-auto sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
+    <div className="grid grid-cols-1 mt-9 container mx-auto sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
       {cardDatas.map((card) => (
         <div
           key={card.id}
@@ -20,7 +20,7 @@ const ArtGallery = () => {
 
           <Link
             href={`/catalog/${card.id}`}
-            className="absolute inset-0  bg-black bg-opacity-40  flex flex-col justify-between items-start text-center text-black opacity-0 group-hover:opacity-100 transition-opacity duration-00 z-10 p-3"
+            className="absolute inset-0  bg-black bg-opacity-40  flex flex-col justify-between items-start text-center text-black opacity-0 group-hover:opacity-100 transition-opacity duration-00 z-7 p-3"
             style={{ backgroundColor: "rgba(0,0,0,0.5)" }}
           >
             <div className="flex items-start flex-col ">

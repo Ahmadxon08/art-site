@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import SwiperCarousel from "../swiper/SwiperCarousel";
 import { cards } from "@/db/db";

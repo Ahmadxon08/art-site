@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { AiOutlineUser } from "react-icons/ai";
 import { FaInstagram } from "react-icons/fa";
